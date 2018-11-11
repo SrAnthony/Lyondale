@@ -13,4 +13,9 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+
+// === Custom ===
+//= require jquery
+//= require semantic.min
+
 //= require_tree .
