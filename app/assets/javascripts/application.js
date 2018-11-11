@@ -17,5 +17,6 @@
 // === Custom ===
 //= require jquery
 //= require semantic.min
+//= require jquery.nicescroll/dist/jquery.nicescroll.min
 
 //= require_tree .
