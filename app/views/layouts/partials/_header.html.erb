@@ -1,25 +1,46 @@
 <header class="main-header">
 
-  <div class="header-logo">
-    <%= link_to root_path do %>
-      <%= image_tag 'logo-transparent.png' %>
-    <% end %>
+  <div class="header-top">
+    <div class="header-logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'logo-transparent.png' %>
+      <% end %>
+    </div>
+    <div class="header-actions">
+      <div class="ui inline dropdown">
+        <div class="text login-text">
+          <%#= image_tag 'square-image.png', class: 'ui avatar image' %>
+          <img src="https://semantic-ui.com/images/avatar/small/jenny.jpg" class="ui avatar image">
+          Jenny
+        </div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">
+            <i class="lnr lnr-user"></i> Minha Conta
+          </div>
+          <div class="item">
+            <i class="lnr lnr-exit"></i> Sair
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <nav class="header-nav">
     <ul class="menu-nav">
       <li>
-        <%= link_to customers_path, class: 'nav-button' do %>
+        <%= link_to customers_path, class: menu_nav_link_class('customers') do %>
           <i class="lnr lnr-users"></i> Clientes
         <% end %>
       </li>
       <li>
-        <%= link_to properties_path, class: 'nav-button' do %>
+        <%= link_to properties_path, class: menu_nav_link_class('properties') do %>
           <i class="lnr lnr-apartment"></i> Imóveis
         <% end %>
       </li>
       <li>
-        <%= link_to rents_path, class: 'nav-button' do %>
+        <%= link_to rents_path, class: menu_nav_link_class('rents') do %>
           <i class="lnr lnr-briefcase"></i> Negócios
         <% end %>
       </li>
