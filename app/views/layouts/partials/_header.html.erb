@@ -1,0 +1,29 @@
+<header class="main-header">
+
+  <div class="header-logo">
+    <%= link_to root_path do %>
+      <%= image_tag 'logo-transparent.png' %>
+    <% end %>
+  </div>
+
+  <nav class="header-nav">
+    <ul class="menu-nav">
+      <li>
+        <%= link_to customers_path, class: 'nav-button' do %>
+          <i class="lnr lnr-users"></i> Clientes
+        <% end %>
+      </li>
+      <li>
+        <%= link_to properties_path, class: 'nav-button' do %>
+          <i class="lnr lnr-apartment"></i> Imóveis
+        <% end %>
+      </li>
+      <li>
+        <%= link_to rents_path, class: 'nav-button' do %>
+          <i class="lnr lnr-briefcase"></i> Negócios
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+
+</header>
