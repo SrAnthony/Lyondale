@@ -1,4 +1,5 @@
 class RentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_rent, only: [:show, :edit, :update, :destroy]
 
   # GET /rents

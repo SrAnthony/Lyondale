@@ -1,0 +1,36 @@
+<%= render 'devise/shared/header', action: 'Entrar na sua conta' %>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui large form'}) do |f| %>
+  <div class="ui stacked segment">
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="user icon"></i>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="lock icon"></i>
+        <%= f.password_field :password, autocomplete: "off", placeholder: 'Senha' %>
+      </div>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <div class="ui checkbox">
+          <%= f.check_box :remember_me, class: 'hidden' %>
+          <%= f.label :remember_me, 'Lembrar identificação' %>
+        </div>
+      </div>
+    <% end -%>
+
+    <%= f.submit "Login", class: 'ui fluid large teal submit button' %>
+
+  </div>
+
+  <div class="ui stacked segment" style="padding-bottom: 14px;">
+    <%= render "devise/shared/links" %>
+  </div>
+
+<% end %>

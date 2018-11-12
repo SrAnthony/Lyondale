@@ -1,0 +1,54 @@
+<%= render 'devise/shared/header', action: 'Editando conta' %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'ui large form' }) do |f| %>
+  <div class="ui stacked segment">
+
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="user icon"></i>
+        <%= f.text_field :name, autofocus: true, placeholder: 'Nome' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="user icon"></i>
+        <%= f.email_field :email, autocomplete: "email", placeholder: 'Email' %>
+      </div>
+    </div>
+
+    <%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <!-- <div>Currently waiting confirmation for: <%#= resource.unconfirmed_email %></div> -->
+    <%# end %>
+
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="lock icon"></i>
+        <%= f.password_field :password, autocomplete: "off", placeholder: 'Senha' %>
+      </div>
+      <span>(deixe-o vazio se não deseja alterá-lo)</span><br>
+    </div>
+
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="lock icon"></i>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirmar senha' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="lock icon"></i>
+        <%= f.password_field :current_password, autocomplete: "off", placeholder: 'Senha atual' %>
+      </div>
+      <span>(precisamos de sua senha atual para confirmar suas mudanças)</span><br>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Atualizar", class: 'ui fluid large teal submit button' %>
+    </div>
+  </div>
+<% end %>
+<div class="ui stacked segment" style="padding-bottom: 14px;">
+  <%= link_to "Voltar", root_path %>
+</div>

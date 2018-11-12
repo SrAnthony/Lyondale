@@ -1,0 +1,27 @@
+<%= render 'devise/shared/header', action: 'Atualize sua senha' %>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'ui large form' }) do |f| %>
+  <div class="ui stacked segment">
+    <%= f.hidden_field :reset_password_token %>
+
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="lock icon"></i>
+        <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder: "Senha" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="lock icon"></i>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirmar senha" %>
+      </div>
+    </div>
+
+    <%= f.submit "Atualizar senha", class: 'ui fluid large teal submit button' %>
+  </div>
+<% end %>
+
+<div class="ui stacked segment" style="padding-bottom: 14px;">
+  <%= render "devise/shared/links" %>
+</div>
