@@ -7,7 +7,10 @@
         <% end %>
       </div>
 
-      <h2 class="ui header text-light">
+      <h2 class="ui header text-light" style="width: 100%">
+        <%= link_to edit_property_path(@property), class: 'right floated', title: 'Editar imóvel' do %>
+          <i class="lnr lnr-pencil"></i>
+        <% end %>
         <i class="lnr lnr-apartment"></i> <%= @property.description %>
         <div class="sub header">
           <%= @property.address %>

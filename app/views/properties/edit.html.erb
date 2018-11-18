@@ -1,6 +1,13 @@
-<h1>Editing Property</h1>
+<div class="ld-flex">
 
-<%= render 'form', property: @property %>
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-apartment"></i> Editando imóvel
+    </h3>
+    <div class="ld-block-content">
 
-<%= link_to 'Show', @property %> |
-<%= link_to 'Back', properties_path %>
+      <%= render 'form', property: @property %>
+
+    </div>
+  </div>
+</div>

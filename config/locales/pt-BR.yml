@@ -22,6 +22,11 @@ pt-BR:
         occupation: Ocupação
         income: Renda
         customer_type: Tipo de cliente
+      property:
+        description: Descrição
+        address: Endereço
+        category: Categoria
+        images: Imagens
   date:
     abbr_day_names:
     - Dom
