@@ -1,0 +1,112 @@
+<table class="ui very basic collapsing celled padded table" style="width: 100%">
+  <tbody>
+    <tr>
+
+      <td>
+        <div class="detail-item">
+          <i class="lnr lnr-phone-handset"></i>
+          <h3 class="ui header">
+            <% if customer.phone.present? %>
+              <%= customer.phone %>
+            <% else %>
+              - Não consta -
+            <% end %>
+            <div class="sub header">
+              Telefone
+            </div>
+          </h3>
+        </div>
+      </td>
+      <td>
+        <div class="detail-item">
+          <i class="lnr lnr-smartphone"></i>
+          <h3 class="ui header">
+            <%= customer.cellphone %>
+            <div class="sub header">
+              Celular
+            </div>
+          </h3>
+        </div>
+      </td>
+
+    </tr>
+    <tr>
+
+      <td>
+        <div class="detail-item">
+          <i class="lnr lnr-map-marker"></i>
+          <h3 class="ui header">
+            <%= customer.address %>
+            <div class="sub header">
+              Endereço
+            </div>
+          </h3>
+        </div>
+      </td>
+      <td>
+        <div class="detail-item">
+          <i class="lnr lnr-envelope"></i>
+          <h3 class="ui header">
+            <%= customer.email %>
+            <div class="sub header">
+              Email
+            </div>
+          </h3>
+        </div>
+      </td>
+
+    </tr>
+    <tr>
+
+      <td>
+        <div class="detail-item">
+          <i class="lnr lnr-magic-wand"></i>
+          <h3 class="ui header">
+            <%= l customer.birthday, format: '%d de %B' %>
+            <div class="sub header">
+              Aniversário
+            </div>
+          </h3>
+        </div>
+      </td>
+      <td>
+        <div class="detail-item">
+          <i class="lnr lnr-briefcase"></i>
+          <h3 class="ui header">
+            <%= customer.type.capitalize %>
+            <div class="sub header">
+              Tipo
+            </div>
+          </h3>
+        </div>
+      </td>
+
+    </tr>
+    <tr>
+
+      <td>
+        <div class="detail-item">
+          <i class="lnr lnr-license"></i>
+          <h3 class="ui header">
+            <%= customer.rg %> - <%= customer.cpf %>
+            <div class="sub header">
+              Identificação
+            </div>
+          </h3>
+        </div>
+      </td>
+      <td>
+        <div class="detail-item">
+          <i class="lnr lnr-tag"></i>
+          <h3 class="ui header">
+            <%= number_to_currency customer.income %>
+            <div class="sub header">
+              Renda
+            </div>
+          </h3>
+        </div>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

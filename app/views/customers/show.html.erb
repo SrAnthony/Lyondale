@@ -1,89 +1,25 @@
 <div class="ld-flex">
 
-  <div class="ld-block">
+  <div class="ld-block text-center">
     <h3 class="ld-block-title">
       <i class="lnr lnr-user"></i> <%= @customer.name %>
       <div class="sub header">
-        <small><%= @customer.email %></small>
+        <small><%= @customer.occupation %></small>
       </div>
     </h3>
     <div class="ld-block-content">
 
-      <ul class="spaced-list">
-        <li>
-          <i class="lnr lnr-phone-handset"></i>
-        </li>
-      </ul>
-
-
-
-
-      <%# <h3 class="ui horizontal divider header text-light">
-        <i class="lnr lnr-apartment"></i>
-        Imóveis
-      </h3> %>
+      <%= render 'customers/details', customer: @customer %>
 
     </div>
   </div>
 </div>
 
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
-</p>
-
-<p>
-  <strong>Rg:</strong>
-  <%= @customer.rg %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @customer.cpf %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @customer.birthday %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <strong>Cellphone:</strong>
-  <%= @customer.cellphone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
-
-<p>
-  <strong>Occupation:</strong>
-  <%= @customer.occupation %>
-</p>
-
-<p>
-  <strong>Income:</strong>
-  <%= @customer.income %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @customer.type %>
-</p>
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%# <div class="ld-flex">
+  <div class="ld-block">
+    <h2 class="ui horizontal divider header text-light">
+      <i class="lnr lnr-apartment"></i>
+      Imóveis
+    </h2>
+  </div>
+</div> %>
