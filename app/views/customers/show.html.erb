@@ -2,6 +2,9 @@
 
   <div class="ld-block text-center">
     <h3 class="ld-block-title">
+      <%= link_to edit_customer_path(@customer), class: 'right floated', title: 'Editar cliente' do %>
+        <i class="lnr lnr-pencil"></i>
+      <% end %>
       <i class="lnr lnr-user"></i> <%= @customer.name %>
       <div class="sub header">
         <small><%= @customer.occupation %></small>

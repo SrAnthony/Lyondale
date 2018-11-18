@@ -1,6 +1,13 @@
-<h1>Editing Customer</h1>
+<div class="ld-flex">
 
-<%= render 'form', customer: @customer %>
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-user"></i> Editando cliente
+    </h3>
+    <div class="ld-block-content">
 
-<%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+      <%= render 'form', customer: @customer %>
+
+    </div>
+  </div>
+</div>
