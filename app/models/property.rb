@@ -12,6 +12,7 @@
 
 class Property < ApplicationRecord
   has_many :rents
+  has_many_attached :images
 
   enum category: { casa: 0, apartamento: 1, terreno: 2 }
 end

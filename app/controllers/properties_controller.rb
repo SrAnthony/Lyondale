@@ -25,6 +25,7 @@ class PropertiesController < ApplicationController
   # POST /properties
   def create
     @property = Property.new(property_params)
+    @property.images.attach(params[:property][:images])
 
     if @property.save
       redirect_to @property, notice: 'Property was successfully created.'
@@ -56,6 +57,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def property_params
-      params.require(:property).permit(:description, :address, :category)
+      params.require(:property).permit(:description, :address, :category, images: [])
     end
 end

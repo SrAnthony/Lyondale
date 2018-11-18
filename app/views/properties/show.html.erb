@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="ld-flex">
+  <div class="ld-block">
+    <div class="ld-flex">
+      <div class="property-images-grid">
+        <% @property.images.each do |image| %>
+        <%= image_tag image, class: 'ui medium rounded image' %>
+        <% end %>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @property.description %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @property.category %>
-</p>
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+      <h2 class="ui header text-light">
+        <i class="lnr lnr-apartment"></i> <%= @property.description %>
+        <div class="sub header">
+          <%= @property.address %>
+        </div>
+      </h2>
+    </div>
+  </div>
+</div>
