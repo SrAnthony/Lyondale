@@ -9,17 +9,22 @@ air-datepicker@^2.2.3:
   dependencies:
     jquery ">=2.0.0 <4.0.0"
 
-jquery.nicescroll@^3.7.6:
-  version "3.7.6"
-  resolved "https://registry.yarnpkg.com/jquery.nicescroll/-/jquery.nicescroll-3.7.6.tgz#afeff3e80658dabe4f78d2d2e84250060fea0852"
-  integrity sha1-r+/z6AZY2r5PeNLS6EJQBg/qCFI=
-  dependencies:
-    jquery ">=1.8.3"
-
-jquery@>=1.12.0, jquery@>=1.8.3, "jquery@>=2.0.0 <4.0.0":
+jquery@>=1.12.0, jquery@>=1.7.0, "jquery@>=2.0.0 <4.0.0":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
+
+simplelightbox@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/simplelightbox/-/simplelightbox-1.15.0.tgz#e81daf9cec382894defce2fc56b032988f188ae8"
+  integrity sha512-ltknkJKHSRG/kL1Ow7y7Dy+mdT0kGfRWOnsYpsag272Z5VfaunTMJtw07GQ/De0hDdja0rLh+OgpJ1GoDtpByg==
+  dependencies:
+    jquery ">=1.7.0"
+
+sweetalert2@^7.29.0:
+  version "7.29.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.29.0.tgz#636aa5e0a57bbbb75501ef39104fc68a1a26b351"
+  integrity sha512-QYMpgj+W1nmE5I6hQ+Kvj+xSAJ78o5oawNOm65fq+0DRuZqmNPwGNnyfMcA3/porpje6RjXJd41NCJN8Rj83wQ==
 
 toastr@^2.1.4:
   version "2.1.4"

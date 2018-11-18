@@ -1,6 +1,7 @@
 class RentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_rent, only: [:show, :edit, :update, :destroy]
+  before_action :set_customers_properties, only: [:new, :edit, :create]
 
   # GET /rents
   def index
@@ -8,8 +9,7 @@ class RentsController < ApplicationController
   end
 
   # GET /rents/1
-  def show
-  end
+  def show; end
 
   # GET /rents/new
   def new
@@ -17,8 +17,7 @@ class RentsController < ApplicationController
   end
 
   # GET /rents/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /rents
   def create
@@ -50,6 +49,11 @@ class RentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_rent
       @rent = Rent.find(params[:id])
+    end
+
+    def set_customers_properties
+      @properties = Property.all
+      @customers = Customer.all
     end
 
     # Only allow a trusted parameter "white list" through.

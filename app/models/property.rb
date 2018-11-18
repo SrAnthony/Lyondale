@@ -15,4 +15,12 @@ class Property < ApplicationRecord
   has_many_attached :images
 
   enum category: { casa: 0, apartamento: 1, terreno: 2 }
+
+  def category_icon
+    case category
+    when 'casa' then 'home'
+    when 'apartamento' then 'apartment'
+    when 'terreno' then 'sun'
+    end
+  end
 end

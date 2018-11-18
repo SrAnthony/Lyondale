@@ -11,7 +11,7 @@
     </h3>
     <div class="ld-block-content">
 
-      <% if @customers.length.positive? %>
+      <% if @customers.any? %>
         <%= render 'customers/customers_list', customers: @customers %>
       <% else %>
         <div class="text-center text-light">
@@ -34,7 +34,7 @@
       </div>
     </h3>
     <div class="ld-block-content">
-      <% if @properties.length.positive? %>
+      <% if @properties.any? %>
         <%= render 'properties/properties_list', properties: @properties %>
       <% else %>
         <div class="text-center text-light">
@@ -61,7 +61,7 @@
       </div>
     </h3>
     <div class="ld-block-content">
-      <% if @rents.length.positive? %>
+      <% if @rents.any? %>
         <%= render 'rents/rents_list', rents: @rents %>
       <% else %>
         <div class="text-center text-light">

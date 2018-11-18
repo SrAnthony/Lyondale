@@ -1,8 +1,6 @@
-<%= form_with(model: rent, local: true) do |form| %>
+<%= form_with(model: rent, local: true, class: 'ui form') do |form| %>
   <% if rent.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(rent.errors.count, "error") %> prohibited this rent from being saved:</h2>
-
       <ul>
       <% rent.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,32 +9,67 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :customer_id %>
-    <%= form.text_field :customer_id, value: params[:customer] %>
+  <div class="two fields">
+    <div class="field">
+      <%= form.label :customer_id %>
+      <div class="ui fluid search selection dropdown">
+        <%= form.hidden_field :customer_id, value: params[:customer] || rent.customer_id %>
+        <i class="dropdown icon"></i>
+        <div class="default text">Selecione um cliente</div>
+        <div class="menu">
+          <% @customers.each do |customer| %>
+            <div class="item" data-value="<%= customer.id %>">
+              <i class="lnr lnr-user"></i> <%= customer.name %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :property_id %>
+      <div class="ui fluid search selection dropdown">
+        <%= form.text_field :property_id, value: params[:property] || rent.property_id %>
+        <i class="dropdown icon"></i>
+        <div class="default text">Selecione um imóvel</div>
+        <div class="menu">
+          <% @properties.each do |property| %>
+            <div class="item" data-value="<%= property.id %>">
+              <i class="lnr lnr-<%= property.category_icon %>"></i> <%= property.description %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :property_id %>
-    <%= form.text_field :property_id, value: params[:property] %>
-  </div>
+  <div class="three fields">
+    <div class="field">
+      <%= form.label :start_date %>
+      <div class="ui left icon input">
+        <i class="calendar alternate outline icon"></i>
+        <%= form.text_field :start_date, class: 'air-datepicker', placeholder: '__/__/____' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :value %>
-    <%= form.text_field :value %>
-  </div>
+    <div class="field">
+      <%= form.label :end_date %>
+      <div class="ui left icon input">
+        <i class="calendar alternate outline icon"></i>
+        <%= form.text_field :end_date, class: 'air-datepicker', placeholder: '__/__/____' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.date_select :start_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date %>
+    <div class="field">
+      <%= form.label :value %>
+      <div class="ui left icon input">
+        <i class="dollar sign icon"></i>
+        <%= form.text_field :value %>
+      </div>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'ui button' %>
   </div>
 <% end %>

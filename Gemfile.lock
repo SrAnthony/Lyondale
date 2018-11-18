@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/igorlemosvicente/sweet-alert-rails-confirm.git
+  revision: 895bd2bf119f247842c955e281f50d94df2bb6e8
+  specs:
+    sweet-alert-confirm (0.4.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -268,6 +274,7 @@ DEPENDENCIES
   semantic-ui-sass
   spring
   spring-watcher-listen (~> 2.0.0)
+  sweet-alert-confirm!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

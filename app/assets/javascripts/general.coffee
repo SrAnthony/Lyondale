@@ -1,8 +1,4 @@
 $(document).on 'turbolinks:load', ->
-  # === Ativa niceScroll
-  # $('body.application').niceScroll({horizrailenabled: false})
-  # $('body.application').getNiceScroll().resize()
-
   # === Ativa todos os dropdowns da página
   $('.ui.dropdown').dropdown()
 
@@ -11,3 +7,6 @@ $(document).on 'turbolinks:load', ->
 
   # === Ativa todos os datepickers da página
   $('.air-datepicker').datepicker({language: 'pt-BR'})
+
+  # === Ativa todos os lightboxes da página
+  $('.lightbox').simpleLightbox()

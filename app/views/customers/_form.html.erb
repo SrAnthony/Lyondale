@@ -62,12 +62,12 @@
     <div class="field">
       <%= form.label :customer_type %>
       <div class="ui dropdown selection">
-        <%= form.hidden_field :customer_type %>
+        <%= form.hidden_field :customer_type, value: params[:customer_type] || customer.customer_type %>
         <div class="default text">Selecione um tipo</div>
         <i class="dropdown icon"></i>
         <div class="menu">
-          <div class="item" data-value="proprietario">Proprietário</div>
-          <div class="item" data-value="inquilino">Inquilino</div>
+          <div class="item" data-value="1">Proprietário</div>
+          <div class="item" data-value="0">Inquilino</div>
         </div>
       </div>
     </div>

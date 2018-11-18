@@ -11,6 +11,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/1
   def show
+    @rents = Rent.where(property: @property)
   end
 
   # GET /properties/new

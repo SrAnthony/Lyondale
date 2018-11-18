@@ -4,12 +4,9 @@
       <tr>
         <td>
           <h4 class="ui image header">
-            <% icon = 'apartment' %>
-            <% icon = 'home' if property.category == 'casa' %>
-            <% icon = 'sun' if property.category == 'terreno' %>
-            <i class="lnr lnr-<%= icon %>"></i>&nbsp;
+            <i class="lnr lnr-<%= property.category_icon %>"></i>&nbsp;
             <div class="content text-normal">
-              <%= link_to property.description, property, class: 'text-inherit' %>
+              <%= link_to property.description, property, class: 'text-inherit', title: 'Visualizar imóvel' %>
               <div class="sub header">
                 <%= property.address %>
               </div>

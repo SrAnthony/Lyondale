@@ -17,9 +17,20 @@
 // === Custom ===
 //= require jquery
 //= require semantic-ui
-//= require jquery.nicescroll/dist/jquery.nicescroll.min
 //= require toastr/build/toastr.min
 //= require air-datepicker/dist/js/datepicker.min
 //= require air-datepicker/dist/js/i18n/datepicker.pt-BR
+//= require sweetalert2/dist/sweetalert2.all.min
+//= require sweet-alert-confirm
+//= require simplelightbox/dist/simple-lightbox.min
 
 //= require_tree .
+
+var sweetAlertConfirmConfig = {
+  title: 'Você tem certeza?',
+  type: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#DD6B55',
+  confirmButtonText: 'Deletar',
+  cancelButtonText: 'Cancelar'
+};

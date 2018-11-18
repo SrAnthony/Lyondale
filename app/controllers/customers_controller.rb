@@ -10,6 +10,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1
   def show
+    @rents = Rent.where(customer: @customer)
   end
 
   # GET /customers/new

@@ -1,5 +1,13 @@
-<h1>New Rent</h1>
+<div class="ld-flex">
 
-<%= render 'form', rent: @rent %>
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-apartment"></i> Novo negócio
+    </h3>
+    <div class="ld-block-content">
 
-<%= link_to 'Back', rents_path %>
+      <%= render 'form', rent: @rent %>
+
+    </div>
+  </div>
+</div>

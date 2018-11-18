@@ -19,11 +19,14 @@
         <td>
           <h4 class="ui image header">
             <div class="content text-normal">
-              <i class="lnr lnr-user"></i> <%= link_to rent.customer.name, rent.customer, class: 'text-inherit' %>
+              <%= link_to rent_path(rent), title: 'Visualizar negócio' do %>
+                <i class="lnr lnr-eye" style="margin-right: 10px"></i>
+              <% end %>
+              <i class="lnr lnr-user"></i> <%= link_to rent.customer.name, rent.customer, class: 'text-inherit', title: 'Visualizar cliente' %>
               <span class="customer-property-divider">
                 <i class="lnr lnr-chevron-left"></i><i class="lnr lnr-chevron-right"></i>
               </span>
-              <i class="lnr lnr-apartment"></i> <%= link_to rent.property.description, rent.property, class: 'text-inherit' %>
+              <i class="lnr lnr-apartment"></i> <%= link_to rent.property.description, rent.property, class: 'text-inherit', title: 'Visualizar imóvel' %>
             </div>
           </h4>
         </td>

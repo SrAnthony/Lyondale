@@ -27,6 +27,14 @@ pt-BR:
         address: Endereço
         category: Categoria
         images: Imagens
+      rent:
+        customer_id: Cliente
+        property_id: Imóvel
+        property: Imóvel
+        customer: Cliente
+        value: Valor
+        start_date: Data inicial
+        end_date: Data final
   date:
     abbr_day_names:
     - Dom

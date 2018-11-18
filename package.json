@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "air-datepicker": "^2.2.3",
-    "jquery.nicescroll": "^3.7.6",
+    "simplelightbox": "^1.15.0",
+    "sweetalert2": "^7.29.0",
     "toastr": "^2.1.4"
   }
 }

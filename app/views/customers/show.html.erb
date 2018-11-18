@@ -18,11 +18,62 @@
   </div>
 </div>
 
-<%# <div class="ld-flex">
-  <div class="ld-block">
-    <h2 class="ui horizontal divider header text-light">
-      <i class="lnr lnr-apartment"></i>
-      Imóveis
-    </h2>
+<% if @rents.any? %>
+  <div class="ld-flex">
+    <div class="ld-block">
+      <h2 class="ui header text-light">
+        <i class="lnr lnr-briefcase"></i> Negócios
+      </h2>
+
+      <table class="ui very basic collapsing celled padded table" style="width: 100%">
+        <thead>
+          <tr>
+            <th>
+              <span class="text-light">Valor</span>
+            </th>
+            <th>
+              <span class="text-light">Imóvel</span>
+            </th>
+            <th>
+              <span class="text-light">Início</span>
+            </th>
+            <th>
+              <span class="text-light">Fim</span>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @rents.each do |rent| %>
+            <tr>
+              <td>
+                <%= number_to_currency rent.value %>
+              </td>
+              <td>
+                <%= rent.property.description %>
+              </td>
+              <td>
+                <%= l rent.start_date %>
+              </td>
+              <td>
+                <%= l rent.end_date %>
+              </td>
+              <td class="center aligned">
+                <%= link_to rent_path(rent), title: 'Visualizar negócio' do %>
+                  <i class="lnr lnr-eye"></i>
+                <% end %>&nbsp;
+                <%= link_to edit_rent_path(rent), title: 'Editar negócio' do %>
+                  <i class="lnr lnr-pencil"></i>
+                <% end %>&nbsp;
+                <%= link_to rent_path(rent), title: 'Deletar negócio', method: :delete, data: { confirm: 'Você tem certeza?' } do %>
+                  <i class="lnr lnr-trash red"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
   </div>
-</div> %>
+<% end %>

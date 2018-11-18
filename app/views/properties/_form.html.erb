@@ -21,23 +21,25 @@
     <%= form.text_field :address %>
   </div>
 
-  <div class="field">
-    <%= form.label :category %>
-    <div class="ui dropdown selection">
-      <%= form.hidden_field :category, value: params[:category] %>
-      <div class="default text">Selecione uma categoria</div>
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <div class="item" data-value="casa">Casa</div>
-        <div class="item" data-value="apartamento">Apartamento</div>
-        <div class="item" data-value="terreno">Terreno</div>
+  <div class="two fields">
+    <div class="field">
+      <%= form.label :category %>
+      <div class="ui dropdown selection">
+        <%= form.hidden_field :category, value: params[:category] || property.category %>
+        <div class="default text">Selecione uma categoria</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item" data-value="1">Casa</div>
+          <div class="item" data-value="2">Apartamento</div>
+          <div class="item" data-value="3">Terreno</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="field">
-    <%= form.label :images %>
-    <%= form.file_field :images, multiple: true %>
+    <div class="field">
+      <%= form.label :images %>
+      <%= form.file_field :images, multiple: true %>
+    </div>
   </div>
 
   <div class="actions">

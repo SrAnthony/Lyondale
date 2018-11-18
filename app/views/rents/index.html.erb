@@ -10,7 +10,7 @@
       </div>
     </h3>
     <div class="ld-block-content">
-      <% if @rents.length.positive? %>
+      <% if @rents.any? %>
         <%= render 'rents/rents_list', rents: @rents %>
       <% else %>
         <div class="text-center text-light">
