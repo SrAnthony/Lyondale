@@ -1,0 +1,55 @@
+// ========================
+// === Lyondale Blocks
+// ========================
+.ld-block
+  display: flex
+  transition: box-shadow .3s ease-in-out
+  margin: 10px
+  box-shadow: 0 0.6rem 1.4rem -0.4rem #d5dae2
+  border: .1rem solid #ddd
+  border-radius: 2px
+  border-top: 2px solid $primary-color
+  background-color: #fff
+  flex-direction: column
+  padding: 4rem 3rem
+  flex: 1
+  &:hover, &:focus, &.active
+    box-shadow: 0 1.8rem 1.8rem -0.5rem #cbd1dc
+
+  .ld-block-title
+    margin: 0 0 3rem
+    font-weight: 100
+    line-height: 1.1
+    color: #444
+    font-size: 22px
+    i
+      margin-right: 5px
+
+// ========================
+// === Flex Utils
+// ========================
+.ld-flex
+  display: flex
+  .center
+    justify-content: center
+    align-items: center
+  .column
+    flex-direction: column
+  .wrap
+    flex-wrap: wrap
+
+// ========================
+// === Random Utils
+// ========================
+.customer-property-divider
+  display: inline-block
+  margin: 0 15px
+
+.register-button
+  display: inline-block
+  margin-top: 5px
+
+.no-decoration
+  text-decoration: none
+  &:hover, &:focus
+    text-decoration: none

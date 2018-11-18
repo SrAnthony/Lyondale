@@ -1,0 +1,48 @@
+<aside class="sidebar-menu" data-grid="sidebar">
+  <ul class="sidebar-list">
+    <li class="sidebar-user-info">
+      <div class="ui inline dropdown">
+        <div class="text-light ld-flex">
+          <img src="https://semantic-ui.com/images/avatar/small/jenny.jpg" class="ui avatar image" style="margin-right: 20px">
+          <div>
+            <span><%= current_user.name %></span><br>
+            <small><%= current_user.email %></small>
+          </div>
+        </div>
+        <div class="menu">
+          <%= link_to edit_user_registration_path, class: 'item' do %>
+            <i class="lnr lnr-user"></i> Minha Conta
+          <% end %>
+          <%= link_to destroy_user_session_path, class: 'item', method: :delete do %>
+            <i class="lnr lnr-exit"></i> Sair
+          <% end %>
+        </div>
+      </div>
+    </li>
+    <li>
+      <%= link_to root_path, class: sidebar_active?('dashboard') do %>
+        <i class="lnr lnr-chart-bars"></i> Painel
+      <% end %>
+    </li>
+    <li>
+      <%= link_to customers_path, class: sidebar_active?('customers') do %>
+        <i class="lnr lnr-users"></i> Clientes
+      <% end %>
+    </li>
+    <li>
+      <%= link_to properties_path, class: sidebar_active?('properties') do %>
+        <i class="lnr lnr-apartment"></i> Imóveis
+      <% end %>
+    </li>
+    <li>
+      <%= link_to rents_path, class: sidebar_active?('rents') do %>
+        <i class="lnr lnr-briefcase"></i> Negócios
+      <% end %>
+    </li>
+    <li>
+      <a href="#">
+        <i class="lnr lnr-cog"></i> Opções
+      </a>
+    </li>
+  </ul>
+</aside>

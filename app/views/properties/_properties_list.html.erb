@@ -1,0 +1,25 @@
+<table class="ui very basic collapsing celled padded table" style="width: 100%">
+  <tbody>
+    <% properties.each do |property| %>
+      <tr>
+        <td>
+          <h4 class="ui image header">
+            <% icon = 'apartment' %>
+            <% icon = 'home' if property.category == 'casa' %>
+            <% icon = 'sun' if property.category == 'terreno' %>
+            <i class="lnr lnr-<%= icon %>"></i>&nbsp;
+            <div class="content text-normal">
+              <%= link_to property.description, property, class: 'text-inherit' %>
+              <div class="sub header">
+                <%= property.address %>
+              </div>
+            </div>
+          </h4>
+        </td>
+        <td class="center aligned">
+          <%= link_to 'Novo negócio', new_rent_path(property: property) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

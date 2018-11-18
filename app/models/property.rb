@@ -11,4 +11,7 @@
 #
 
 class Property < ApplicationRecord
+  has_many :rents
+
+  enum category: { casa: 0, apartamento: 1, terreno: 2 }
 end

@@ -1,35 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="ld-flex">
 
-<h1>Rents</h1>
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-briefcase"></i> Lista de negócios
+      <div class="right floated">
+        <%= link_to new_rent_path, title: 'Cadastrar negócio' do %>
+          <i class="lnr lnr-plus-circle"></i>
+        <% end %>
+      </div>
+    </h3>
+    <div class="ld-block-content">
+      <% if @rents.length.positive? %>
+        <%= render 'rents/rents_list', rents: @rents %>
+      <% else %>
+        <div class="text-center text-light">
+          Não há negócios cadastrados<br>
+          <%= link_to new_rent_path, class: 'register-button' do %>
+            <i class="lnr lnr-plus-circle"></i> Cadastrar agora
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Customer</th>
-      <th>Property</th>
-      <th>Value</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @rents.each do |rent| %>
-      <tr>
-        <td><%= rent.customer_id %></td>
-        <td><%= rent.property_id %></td>
-        <td><%= rent.value %></td>
-        <td><%= rent.start_date %></td>
-        <td><%= rent.end_date %></td>
-        <td><%= link_to 'Show', rent %></td>
-        <td><%= link_to 'Edit', edit_rent_path(rent) %></td>
-        <td><%= link_to 'Destroy', rent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Rent', new_rent_path %>
+</div>

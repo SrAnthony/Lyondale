@@ -1,10 +1,10 @@
 .main-header
   background-color: #fff
-  box-shadow: 0 6px 18px 2px rgba(0,0,0,0.05)
   position: relative
   z-index: 300
+  box-shadow: 0 0.6rem 1.4rem -0.4rem #d5dae2
   .header-top
-    background-image: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), image-url('city-background-low.jpg')
+    background-image: linear-gradient(rgba(215, 168, 36, .8), rgba(215, 168, 36, .8)), image-url('city-background-low.jpg')
     background-repeat: no-repeat
     background-size: cover
     background-position: center
@@ -12,9 +12,9 @@
     width: 100%
     text-align: center
     .header-logo
-      padding: 10px
+      padding: 6px
       img
-        width: 250px
+        width: 200px
     .header-actions
       position: absolute
       right: 30px
@@ -38,10 +38,13 @@
   text-decoration: none
   color: #fff
   padding: 15px 70px
-  transition: background-color .1s
+  transition: background-color .1s, transform .1s
+  &:hover:not(.active)
+    transform: scale(1.03)
+    z-index: 10
   &:hover, &:focus, &.active
     color: #fff
-    background-color: rgba(0, 0, 0, .1)
+    background-color: darken($primary-color, 3%)
     text-decoration: none
   .lnr
     font-size: 1.3em

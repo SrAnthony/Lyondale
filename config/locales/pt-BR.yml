@@ -6,6 +6,22 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+    models:
+      customer: Cliente
+      property: Imóvel
+      rent: Negócio
+    attributes:
+      customer:
+        name: Nome
+        rg: RG
+        cpf: CPF
+        birthday: Data de nascimento
+        phone: Telefone
+        cellphone: Celular
+        address: Endereço
+        occupation: Ocupação
+        income: Renda
+        customer_type: Tipo de cliente
   date:
     abbr_day_names:
     - Dom

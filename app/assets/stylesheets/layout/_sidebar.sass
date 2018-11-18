@@ -1,0 +1,37 @@
+.sidebar-menu
+  height: 100%
+  background: white
+  z-index: 600
+  box-shadow: 0 0.6rem 1.4rem -0.4rem #d5dae2
+  border-right: 1px solid #eee
+
+.sidebar-user-info
+  line-height: 15px
+  padding-left: 28px
+  padding-bottom: 15px
+
+.sidebar-list
+  margin: 0
+  padding: 0
+  list-style: none
+  padding-top: 30px
+
+  .sidebar-title
+    color: #444
+    padding: 20px 0
+    text-align: center
+
+  li a
+    color: #444
+    font-size: 1.1em
+    text-transform: uppercase
+    display: block
+    padding: 20px 30px
+    border-left: 3px solid $primary-color
+    margin-bottom: 2px
+    transition: background-color .2s, color .1s
+    &:hover, &.active
+      background-color: $primary-color
+      color: white
+    i
+      margin-right: 10px

@@ -4,7 +4,9 @@ class PropertiesController < ApplicationController
 
   # GET /properties
   def index
-    @properties = Property.all
+    @houses = Property.order(created_at: :desc).where(category: 0)
+    @apartments = Property.order(created_at: :desc).where(category: 1)
+    @lands = Property.order(created_at: :desc).where(category: 2)
   end
 
   # GET /properties/1

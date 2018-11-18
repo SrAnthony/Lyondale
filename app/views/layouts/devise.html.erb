@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lyondale</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyondale</title>
 
-  <%= stylesheet_link_tag 'semantic', 'application', 'devise', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-</head>
-<body class="devise">
-  <div class="ui middle aligned center aligned grid">
-    <div class="column">
-      <%= yield %>
+    <%= stylesheet_link_tag 'semantic', 'application', 'devise', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="devise">
+
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        <%= yield %>
+      </div>
     </div>
-  </div>
-</body>
+
+    <%= toastr_flash %>
+  </body>
 </html>

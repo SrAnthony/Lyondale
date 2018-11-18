@@ -1,47 +1,53 @@
-<p id="notice"><%= notice %></p>
+<div class="ld-flex">
 
-<h1>Customers</h1>
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-users"></i> Lista de proprietários
+      <div class="right floated">
+        <%= link_to new_customer_path(customer_type: 1), title: 'Cadastrar proprietário' do %>
+          <i class="lnr lnr-plus-circle"></i>
+        <% end %>
+      </div>
+    </h3>
+    <div class="ld-block-content">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Rg</th>
-      <th>Cpf</th>
-      <th>Birthday</th>
-      <th>Phone</th>
-      <th>Cellphone</th>
-      <th>Email</th>
-      <th>Address</th>
-      <th>Occupation</th>
-      <th>Income</th>
-      <th>Type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <% if @landlords.length.positive? %>
+        <%= render 'customers_list', customers: @landlords %>
+      <% else %>
+        <div class="text-center text-light">
+          Não há proprietários cadastrados<br>
+          <%= link_to new_customer_path(customer_type: 1), class: 'register-button' do %>
+            <i class="lnr lnr-plus-circle"></i> Cadastrar agora
+          <% end %>
+        </div>
+      <% end %>
 
-  <tbody>
-    <% @customers.each do |customer| %>
-      <tr>
-        <td><%= customer.name %></td>
-        <td><%= customer.rg %></td>
-        <td><%= customer.cpf %></td>
-        <td><%= customer.birthday %></td>
-        <td><%= customer.phone %></td>
-        <td><%= customer.cellphone %></td>
-        <td><%= customer.email %></td>
-        <td><%= customer.address %></td>
-        <td><%= customer.occupation %></td>
-        <td><%= customer.income %></td>
-        <td><%= customer.type %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </div>
+  </div>
 
-<br>
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-users"></i> Lista de inquilinos
+      <div class="right floated">
+        <%= link_to new_customer_path(customer_type: 0), title: 'Cadastrar inquilino' do %>
+          <i class="lnr lnr-plus-circle"></i>
+        <% end %>
+      </div>
+    </h3>
+    <div class="ld-block-content">
 
-<%= link_to 'New Customer', new_customer_path %>
+      <% if @tenants.length.positive? %>
+        <%= render 'customers_list', customers: @tenants %>
+      <% else %>
+        <div class="text-center text-light">
+          Não há inquilinos cadastrados<br>
+          <%= link_to new_customer_path(customer_type: 0), class: 'register-button' do %>
+            <i class="lnr lnr-plus-circle"></i> Cadastrar agora
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

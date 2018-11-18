@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700')
+
 *
   box-sizing: border-box
 body
@@ -7,5 +9,20 @@ body
 
 main.application-main
   min-height: 100vh
+  height: 100%
+  padding: 20px
+
+body.application
+  display: grid
+  grid-template-columns: 300px 1fr
+  grid-template-areas: 'header header' 'sidebar main'
+
+[data-grid="header"]
+  grid-area: header
+[data-grid="sidebar"]
+  grid-area: sidebar
+[data-grid="main"]
+  grid-area: main
 
 @import 'layout/header'
+@import 'layout/sidebar'

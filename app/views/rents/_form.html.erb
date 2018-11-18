@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :customer_id %>
-    <%= form.text_field :customer_id %>
+    <%= form.text_field :customer_id, value: params[:customer] %>
   </div>
 
   <div class="field">
     <%= form.label :property_id %>
-    <%= form.text_field :property_id %>
+    <%= form.text_field :property_id, value: params[:property] %>
   </div>
 
   <div class="field">

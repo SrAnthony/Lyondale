@@ -2,6 +2,8 @@
   "name": "Lyondale",
   "private": true,
   "dependencies": {
-    "jquery.nicescroll": "^3.7.6"
+    "air-datepicker": "^2.2.3",
+    "jquery.nicescroll": "^3.7.6",
+    "toastr": "^2.1.4"
   }
 }

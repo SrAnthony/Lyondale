@@ -18,5 +18,8 @@
 //= require jquery
 //= require semantic-ui
 //= require jquery.nicescroll/dist/jquery.nicescroll.min
+//= require toastr/build/toastr.min
+//= require air-datepicker/dist/js/datepicker.min
+//= require air-datepicker/dist/js/i18n/datepicker.pt-BR
 
 //= require_tree .

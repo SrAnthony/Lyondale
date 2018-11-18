@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
   <head>
     <title>Lyondale</title>
     <%= csrf_meta_tags %>
@@ -13,12 +14,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+
+  <body class="application">
     <%= render 'layouts/partials/header' %>
 
-    <main class="application-main">
+    <%= render 'layouts/partials/sidebar' %>
+
+    <main class="application-main" data-grid="main">
       <%= yield %>
     </main>
 
+    <%= toastr_flash %>
   </body>
 </html>

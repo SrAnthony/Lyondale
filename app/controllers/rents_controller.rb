@@ -4,7 +4,7 @@ class RentsController < ApplicationController
 
   # GET /rents
   def index
-    @rents = Rent.all
+    @rents = Rent.order(created_at: :desc).all
   end
 
   # GET /rents/1

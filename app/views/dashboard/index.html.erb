@@ -1,0 +1,77 @@
+<div class="ld-flex">
+
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-users"></i> Últimos clientes
+      <div class="right floated">
+        <%= link_to new_customer_path, title: 'Cadastrar cliente' do %>
+          <i class="lnr lnr-plus-circle"></i>
+        <% end %>
+      </div>
+    </h3>
+    <div class="ld-block-content">
+
+      <% if @customers.length.positive? %>
+        <%= render 'customers/customers_list', customers: @customers %>
+      <% else %>
+        <div class="text-center text-light">
+          Não há clientes cadastrados<br>
+          <%= link_to new_customer_path, class: 'register-button' do %>
+            <i class="lnr lnr-plus-circle"></i> Cadastrar agora
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-apartment"></i> Últimos imóveis
+      <div class="right floated">
+        <%= link_to new_property_path, title: 'Cadastrar imóvel' do %>
+          <i class="lnr lnr-plus-circle"></i>
+        <% end %>
+      </div>
+    </h3>
+    <div class="ld-block-content">
+      <% if @properties.length.positive? %>
+        <%= render 'properties/properties_list', properties: @properties %>
+      <% else %>
+        <div class="text-center text-light">
+          Não há imóveis cadastrados<br>
+          <%= link_to new_property_path, class: 'register-button' do %>
+            <i class="lnr lnr-plus-circle"></i> Cadastrar agora
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<div class="ld-flex">
+
+  <div class="ld-block">
+    <h3 class="ld-block-title">
+      <i class="lnr lnr-briefcase"></i> Últimos negócios
+      <div class="right floated">
+        <%= link_to new_rent_path, title: 'Cadastrar negócio' do %>
+          <i class="lnr lnr-plus-circle"></i>
+        <% end %>
+      </div>
+    </h3>
+    <div class="ld-block-content">
+      <% if @rents.length.positive? %>
+        <%= render 'rents/rents_list', rents: @rents %>
+      <% else %>
+        <div class="text-center text-light">
+          Não há negócios cadastrados<br>
+          <%= link_to new_rent_path, class: 'register-button' do %>
+            <i class="lnr lnr-plus-circle"></i> Cadastrar agora
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

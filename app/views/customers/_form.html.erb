@@ -1,8 +1,6 @@
-<%= form_with(model: customer, local: true) do |form| %>
+<%= form_with(model: customer, local: true, class: 'ui form') do |form| %>
   <% if customer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
-
       <ul>
       <% customer.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -16,34 +14,33 @@
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :rg %>
-    <%= form.text_field :rg %>
+  <div class="two fields">
+    <div class="field">
+      <%= form.label :rg %>
+      <%= form.text_field :rg %>
+    </div>
+
+    <div class="field">
+      <%= form.label :cpf %>
+      <%= form.text_field :cpf %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf %>
-  </div>
+  <div class="two fields">
+    <div class="field">
+      <%= form.label :birthday %>
+      <%= form.text_field :birthday, class: 'air-datepicker' %>
+    </div>
 
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.date_select :birthday %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cellphone %>
-    <%= form.text_field :cellphone %>
+    <div class="field">
+      <%= form.label :cellphone %>
+      <%= form.text_field :cellphone %>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.email_field :email %>
   </div>
 
   <div class="field">
@@ -51,22 +48,33 @@
     <%= form.text_field :address %>
   </div>
 
-  <div class="field">
-    <%= form.label :occupation %>
-    <%= form.text_field :occupation %>
+  <div class="three fields">
+    <div class="field">
+      <%= form.label :occupation %>
+      <%= form.text_field :occupation %>
+    </div>
+
+    <div class="field">
+      <%= form.label :income %>
+      <%= form.text_field :income %>
+    </div>
+
+    <div class="field">
+      <%= form.label :customer_type %>
+      <div class="ui dropdown selection">
+        <%= form.hidden_field :customer_type %>
+        <div class="default text">Selecione um tipo</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item" data-value="proprietario">Proprietário</div>
+          <div class="item" data-value="inquilino">Inquilino</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :income %>
-    <%= form.text_field :income %>
-  </div>
-
-  <div class="field">
-    <%= form.label :customer_type %>
-    <%= form.number_field :customer_type %>
-  </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'ui button' %>
   </div>
 <% end %>

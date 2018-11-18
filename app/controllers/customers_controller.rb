@@ -4,7 +4,8 @@ class CustomersController < ApplicationController
 
   # GET /customers
   def index
-    @customers = Customer.all
+    @tenants = Customer.order(created_at: :desc).where(customer_type: 0)
+    @landlords = Customer.order(created_at: :desc).where(customer_type: 1)
   end
 
   # GET /customers/1
