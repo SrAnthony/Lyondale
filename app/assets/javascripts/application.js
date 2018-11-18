@@ -23,6 +23,8 @@
 //= require sweetalert2/dist/sweetalert2.all.min
 //= require sweet-alert-confirm
 //= require simplelightbox/dist/simple-lightbox.min
+//= require datatables.net/js/jquery.dataTables.min
+//= require datatables.net-se/js/dataTables.semanticui.min
 
 //= require_tree .
 

@@ -9,7 +9,22 @@ air-datepicker@^2.2.3:
   dependencies:
     jquery ">=2.0.0 <4.0.0"
 
-jquery@>=1.12.0, jquery@>=1.7.0, "jquery@>=2.0.0 <4.0.0":
+datatables.net-se@^1.10.19:
+  version "1.10.19"
+  resolved "https://registry.yarnpkg.com/datatables.net-se/-/datatables.net-se-1.10.19.tgz#3a451a0a7e2734204c88ce9471216d7a4d9e343e"
+  integrity sha512-62OaBUW2ZM4i5mOMOc8WQ+H9l93YKAdpQoUVPzlvvNNhVDmSrS8eL2cxUKxJAJE+SxIRlC9XTh9hVga9VDWaJw==
+  dependencies:
+    datatables.net "1.10.19"
+    jquery ">=1.7"
+
+datatables.net@1.10.19:
+  version "1.10.19"
+  resolved "https://registry.yarnpkg.com/datatables.net/-/datatables.net-1.10.19.tgz#97a1ed41c85e62d61040603481b59790a172dd1f"
+  integrity sha512-+ljXcI6Pj3PTGy5pesp3E5Dr3x3AV45EZe0o1r0gKENN2gafBKXodVnk2ypKwl2tTmivjxbkiqoWnipTefyBTA==
+  dependencies:
+    jquery ">=1.7"
+
+jquery@>=1.12.0, jquery@>=1.7, jquery@>=1.7.0, "jquery@>=2.0.0 <4.0.0":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
