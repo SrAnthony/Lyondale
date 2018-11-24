@@ -4,9 +4,6 @@
     <th>
       <span class="text-light">Descrição</span>
     </th>
-    <th>
-      <span class="text-light">Proprietário</span>
-    </th>
     <th></th>
   </thead>
   <tbody>
@@ -22,9 +19,6 @@
               </div>
             </div>
           </h4>
-        </td>
-        <td>
-          <%= link_to property.owner.name, property.owner %>
         </td>
         <td class="center aligned">
           <%= link_to 'Novo negócio', new_rent_path(property: property) %>
