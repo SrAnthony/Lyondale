@@ -7,20 +7,22 @@ $(document).on 'turbolinks:before-cache', ->
 
 # === Toda vez que uma página carrega
 $(document).on 'turbolinks:load', ->
-  # === Ativa todos os dropdowns da página
+  # === Ativa todos os dropdowns
   $('.ui.dropdown').dropdown()
 
-  # === Ativa todos os accordions da página
+  # === Ativa todos os accordions
   $('.ui.accordion').accordion()
 
-  # === Ativa todos os datepickers da página
+  # === Ativa todos os datepickers
   $('.air-datepicker').datepicker({language: 'pt-BR'})
 
-  # === Ativa todos os lightboxes da página
+  # === Ativa todos os lightboxes
   $('.lightbox').simpleLightbox()
 
-  # === Ativa todos os datatables da página
-  $datatable = $('.datatable').DataTable {
+  # === Ativa todos os datatables e seus inputs de pesquisa
+  $('table[data-table]').each ->
+    table_name = this.dataset.table
+    table = $(this).DataTable {
       language: datatable_language,
       lengthChange: false,
       dom:  "<'ui stackable grid'" +
@@ -34,9 +36,8 @@ $(document).on 'turbolinks:load', ->
             ">"
     }
 
-  # === Ativa todos os inputs de busca do datatable
-  $('.datatable-search').keyup ->
-    $datatable.search($(this).val()).draw()
+    $("input[data-table='#{table_name}']").keyup ->
+      table.search($(this).val()).draw()
 
 # === Tradução do datatable para português
 datatable_language = {

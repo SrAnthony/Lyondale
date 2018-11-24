@@ -1,6 +1,7 @@
 class PropertiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_property, only: [:show, :edit, :update, :destroy]
+  before_action :set_customers, only: [:edit, :new, :create]
 
   # GET /properties
   def index
@@ -20,13 +21,12 @@ class PropertiesController < ApplicationController
   end
 
   # GET /properties/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /properties
   def create
     @property = Property.new(property_params)
-    @property.images.attach(params[:property][:images])
+    @property.images.attach(params[:property][:images]) if params[:property][:images].present?
 
     if @property.save
       redirect_to @property, notice: 'Property was successfully created.'
@@ -56,8 +56,12 @@ class PropertiesController < ApplicationController
       @property = Property.find(params[:id])
     end
 
+    def set_customers
+      @customers = Customer.all
+    end
+
     # Only allow a trusted parameter "white list" through.
     def property_params
-      params.require(:property).permit(:description, :address, :category, images: [])
+      params.require(:property).permit(:description, :address, :category, :owner_id, images: [])
     end
 end

@@ -3,7 +3,11 @@
     <h3 class="ld-block-title">
       <i class="lnr lnr-home"></i> Lista de casas
       <div class="right floated">
-        <%= link_to new_property_path(category: 1), title: 'Cadastrar casa' do %>
+        <div class="ui icon transparent small input">
+          <i class="lnr lnr-magnifier blue-link link"></i>
+          <input type="text" placeholder="Procurar" class="text-light datatable-search" data-table="houses">
+        </div>
+        <%= link_to new_property_path(category: :casa), title: 'Cadastrar casa' do %>
           <i class="lnr lnr-plus-circle"></i>
         <% end %>
       </div>
@@ -11,11 +15,11 @@
     <div class="ld-block-content">
 
       <% if @houses.any? %>
-        <%= render 'properties_list', properties: @houses %>
+        <%= render 'properties_list', properties: @houses, datatable: 'houses' %>
       <% else %>
         <div class="text-center text-light">
           Não há casas cadastradas<br>
-          <%= link_to new_property_path(category: 0), class: 'register-button' do %>
+          <%= link_to new_property_path(category: :casa), class: 'register-button' do %>
             <i class="lnr lnr-plus-circle"></i> Cadastrar agora
           <% end %>
         </div>
@@ -30,7 +34,11 @@
     <h3 class="ld-block-title">
       <i class="lnr lnr-apartment"></i> Lista de apartamentos
       <div class="right floated">
-        <%= link_to new_property_path(category: 2), title: 'Cadastrar apartamento' do %>
+        <div class="ui icon transparent small input">
+          <i class="lnr lnr-magnifier blue-link link"></i>
+          <input type="text" placeholder="Procurar" class="text-light datatable-search" data-table="apartments">
+        </div>
+        <%= link_to new_property_path(category: :apartmento), title: 'Cadastrar apartamento' do %>
           <i class="lnr lnr-plus-circle"></i>
         <% end %>
       </div>
@@ -38,11 +46,11 @@
     <div class="ld-block-content">
 
       <% if @apartments.any? %>
-        <%= render 'properties_list', properties: @apartments %>
+        <%= render 'properties_list', properties: @apartments, datatable: 'apartments' %>
       <% else %>
         <div class="text-center text-light">
           Não há apartamentos cadastrados<br>
-          <%= link_to new_property_path(category: 1), class: 'register-button' do %>
+          <%= link_to new_property_path(category: :apartmento), class: 'register-button' do %>
             <i class="lnr lnr-plus-circle"></i> Cadastrar agora
           <% end %>
         </div>
@@ -57,7 +65,11 @@
     <h3 class="ld-block-title">
       <i class="lnr lnr-sun"></i> Lista de terrenos
       <div class="right floated">
-        <%= link_to new_property_path(category: 3), title: 'Cadastrar terreno' do %>
+        <div class="ui icon transparent small input">
+          <i class="lnr lnr-magnifier blue-link link"></i>
+          <input type="text" placeholder="Procurar" class="text-light datatable-search" data-table="lands">
+        </div>
+        <%= link_to new_property_path(category: :terreno), title: 'Cadastrar terreno' do %>
           <i class="lnr lnr-plus-circle"></i>
         <% end %>
       </div>
@@ -65,11 +77,11 @@
     <div class="ld-block-content">
 
       <% if @lands.any? %>
-        <%= render 'properties_list', properties: @lands %>
+        <%= render 'properties_list', properties: @lands, datatable: 'lands' %>
       <% else %>
         <div class="text-center text-light">
           Não há terrenos cadastrados<br>
-          <%= link_to new_property_path(category: 3), class: 'register-button' do %>
+          <%= link_to new_property_path(category: :terreno), class: 'register-button' do %>
             <i class="lnr lnr-plus-circle"></i> Cadastrar agora
           <% end %>
         </div>

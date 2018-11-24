@@ -25,6 +25,7 @@
 //= require simplelightbox/dist/simple-lightbox.min
 //= require datatables.net/js/jquery.dataTables.min
 //= require datatables.net-se/js/dataTables.semanticui.min
+//= require jquery-mask-plugin/dist/jquery.mask.min
 
 //= require_tree .
 

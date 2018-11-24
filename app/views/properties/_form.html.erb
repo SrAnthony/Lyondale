@@ -16,9 +16,26 @@
     <%= form.text_field :description %>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
+  <div class="two fields">
+    <div class="field">
+      <%= form.label :address %>
+      <%= form.text_field :address %>
+    </div>
+    <div class="field">
+      <%= form.label :owner_id %>
+      <div class="ui fluid search selection dropdown">
+        <%= form.hidden_field :owner_id, value: params[:owner] || property.owner_id %>
+        <i class="dropdown icon"></i>
+        <div class="default text">Selecione um cliente</div>
+        <div class="menu">
+          <% @customers.each do |customer| %>
+            <div class="item" data-value="<%= customer.id %>">
+              <i class="lnr lnr-user"></i> <%= customer.name %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="two fields">
@@ -29,9 +46,9 @@
         <div class="default text">Selecione uma categoria</div>
         <i class="dropdown icon"></i>
         <div class="menu">
-          <div class="item" data-value="1">Casa</div>
-          <div class="item" data-value="2">Apartamento</div>
-          <div class="item" data-value="3">Terreno</div>
+          <div class="item" data-value="casa">Casa</div>
+          <div class="item" data-value="apartamento">Apartamento</div>
+          <div class="item" data-value="terreno">Terreno</div>
         </div>
       </div>
     </div>

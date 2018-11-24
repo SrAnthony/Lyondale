@@ -27,6 +27,9 @@ pt-BR:
         address: Endereço
         category: Categoria
         images: Imagens
+        owner_id: Proprietário
+        owner: Proprietário
+        customer: Proprietário
       rent:
         customer_id: Cliente
         property_id: Imóvel

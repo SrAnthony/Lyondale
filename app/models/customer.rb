@@ -20,6 +20,7 @@
 
 class Customer < ApplicationRecord
   has_many :rents
+  has_many :properties
   enum customer_type: { inquilino: 0, proprietário: 1 }
 
   def type

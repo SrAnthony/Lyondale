@@ -1,4 +1,5 @@
-<table class="ui very basic collapsing celled padded table datatable" style="width: 100%">
+<% datatable ||= false %>
+<table class="ui very basic collapsing celled padded table <%= 'datatable' if datatable %>" style="width: 100%">
   <thead>
     <tr>
       <th></th>

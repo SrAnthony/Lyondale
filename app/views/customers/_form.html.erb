@@ -22,7 +22,7 @@
 
     <div class="field">
       <%= form.label :cpf %>
-      <%= form.text_field :cpf %>
+      <%= form.text_field :cpf, class: 'cpf-mask' %>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
 
     <div class="field">
       <%= form.label :cellphone %>
-      <%= form.text_field :cellphone %>
+      <%= form.text_field :cellphone, class: 'phone-mask' %>
     </div>
   </div>
 
@@ -56,7 +56,10 @@
 
     <div class="field">
       <%= form.label :income %>
-      <%= form.text_field :income %>
+      <div class="ui left icon input">
+        <i class="dollar sign icon"></i>
+        <%= form.text_field :income, class: 'money-mask' %>
+      </div>
     </div>
 
     <div class="field">

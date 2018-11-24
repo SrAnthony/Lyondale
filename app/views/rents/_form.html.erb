@@ -29,7 +29,7 @@
     <div class="field">
       <%= form.label :property_id %>
       <div class="ui fluid search selection dropdown">
-        <%= form.text_field :property_id, value: params[:property] || rent.property_id %>
+        <%= form.hidden_field :property_id, value: params[:property] || rent.property_id %>
         <i class="dropdown icon"></i>
         <div class="default text">Selecione um imóvel</div>
         <div class="menu">
@@ -64,7 +64,7 @@
       <%= form.label :value %>
       <div class="ui left icon input">
         <i class="dollar sign icon"></i>
-        <%= form.text_field :value %>
+        <%= form.text_field :value, class: 'money-mask' %>
       </div>
     </div>
   </div>

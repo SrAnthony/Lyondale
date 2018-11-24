@@ -8,9 +8,11 @@
 #  category    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  owner_id    :integer          not null
 #
 
 class Property < ApplicationRecord
+  belongs_to :customer, class_name: 'Customer', foreign_key: 'owner_id'
   has_many :rents
   has_many_attached :images
 
@@ -22,5 +24,9 @@ class Property < ApplicationRecord
     when 'apartamento' then 'apartment'
     when 'terreno' then 'sun'
     end
+  end
+
+  def owner
+    customer
   end
 end
